@@ -1,0 +1,17 @@
+.feature-box {
+  color: $color-dark-grey;
+  background-color: rgba($color-white, 0.8);
+  border-radius: 3px;
+  padding: 1rem;
+  box-shadow: $default-shadow;
+  transition: transform 0.3s;
+  &__icon {
+    display: inline-block;
+    font-size: 3rem;
+    @include gradient-text;
+  }
+  &:hover {
+    transform: translateY(-0.4rem) scale(1.03);
+    box-shadow: $large-shadow;
+  }
+}

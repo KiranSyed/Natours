@@ -1,0 +1,28 @@
+.header{
+    height: 95vh;
+    width: 100%;
+    position: relative;
+   @include background-styling('../img/hero-small.jpg');
+   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    &__logo-box{
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        &:hover{
+            .header__logo{
+               // transform-style: preserve-3d;
+                @include anim-slide(slide-bottom , y, 3rem, 0rem);
+                animation: slide-bottom 1s ease-out;
+            
+            }
+        }
+    }
+    &__logo{
+        height: 2rem;
+    }
+    &__text-box{
+        @include align-center;
+        top: 45%;
+        text-align: center;
+    }
+}

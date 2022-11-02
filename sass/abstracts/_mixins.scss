@@ -1,0 +1,29 @@
+
+
+@mixin align-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin clear-fix{
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+@mixin background-styling($image-path) {
+    background-image: linear-gradient(to bottom right, rgba($color-dark-green, 0.4), rgba($color-light-green, 0.4)),
+    url($image-path);
+    background-size: cover;
+    background-position: top;
+    
+}
+@mixin gradient-text{
+    background-image: linear-gradient( to right, 
+    $color-light-green,  
+    $color-dark-green);
+    background-clip: text;
+    color: transparent; 
+}

@@ -1,0 +1,15 @@
+@mixin anim-slide($name, $axis, $slide, $offset){
+    @keyframes  #{$name}{ 
+        0%{
+            opacity: 0;
+            transform: translate+$axis+"("+($slide)+")";
+        }
+        80%{
+            transform: translate+$axis+"("+($offset)+")";
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }   
+}

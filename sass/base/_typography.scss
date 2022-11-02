@@ -1,0 +1,52 @@
+
+body{
+    padding: 3%;
+    font-family: Lato, sans-serif;
+    line-height: 1.8;
+}
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    &--main{
+        display: block;
+        letter-spacing: 1.3rem;
+        font-size: 4rem;
+        font-weight: 600;
+        @include anim-slide(slide-left , x, -30rem, 2rem);
+        animation: slide-left 1s ease-out;
+    }
+    &--sub{
+        display: block;
+        letter-spacing: .5rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        @include anim-slide(slide-right, x, 30rem, -2rem);
+        animation: slide-right 1s ease-out;
+      
+    }
+}
+.heading-secondary{
+    display: inline-block;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+   @include gradient-text;
+    transition: transform .4s;
+    &:hover{
+        transform: skewX(5deg) skewY(3deg) scale(1.05);
+        text-shadow: 1rem 1rem .8rem rgba($color-black, 0.2);
+    }
+}
+.heading-tertiary{
+    font-size: $default-font-size;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.paragraph{
+    font-size: $default-font-size;
+    &:not(:last-child){
+        margin-bottom: 1.8rem;
+    }
+}

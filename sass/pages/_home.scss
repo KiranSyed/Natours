@@ -1,0 +1,29 @@
+.section-about{
+    background-color: $color-light-grey-1;
+    color: $color-dark-grey;
+    padding: 20rem 0 35rem;
+    margin-top: -30vh;
+}
+.section-features{
+    margin-top: -10rem;
+    padding: 10rem 0 20rem;
+    @include background-styling('../img/nat-4.jpg');
+    transform: skewY(-7deg);
+    & > *{
+        transform: skewY(7deg);
+    }
+}
+.section-tours{
+    margin-top: -6rem;
+    padding: 20rem 0 10rem;
+    background-color: $color-light-grey-1;
+    color: $color-dark-grey;
+    .row{
+        height: 30rem;
+    }
+}
+.section-stories{
+    position: relative;
+    padding: 7rem 0rem;
+    color: $color-dark-grey;
+}

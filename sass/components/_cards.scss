@@ -1,0 +1,125 @@
+.card{
+    perspective: 150rem;
+    --moz--perspective: 150rem;
+    position: relative;
+    &__side{
+        font-size: 2rem;
+        height: 30rem;
+        transition: transform 1s ease;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: $default-shadow;
+        &--front{
+            background-color: white;
+            color: rgb(7, 7, 7);
+            
+        }
+        &--back{
+            
+            transform: rotateY(180deg);
+            &--1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark );
+                color: white;
+            }
+            &--2{
+                background-image: linear-gradient(to right bottom, $color-light-green, $color-dark-green);
+                color: white;
+            }
+            &--3{
+                background-image: linear-gradient(to right bottom,  $color-tertiary-light, $color-tertiary-dark);
+                color: white;
+            }
+        }
+    }
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0deg);
+    }
+    
+    //Styling front of cards
+    &__picture{
+        height: 40%;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        background-size: cover;
+        background-blend-mode: screen;
+        &--1{
+          
+            background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark),
+                                url('../img/nat-5.jpg');   
+        }    
+        &--2{
+          
+            background-image: linear-gradient(to bottom right, $color-light-green ,$color-dark-green),
+                                url('../img/nat-6.jpg');   
+        }   
+        &--3{
+          
+            background-image: linear-gradient(to bottom right, $color-tertiary-light ,$color-tertiary-dark),
+                                url('../img/nat-7.jpg');   
+        }     
+    }
+    &__heading{
+        text-transform: uppercase;
+        text-align: right;
+        font-size: 1.4rem;
+        font-weight: 400;
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        width: 75%;
+    }
+    &__heading-span{
+        padding: .6rem 1rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &--1{
+            background-image: linear-gradient(to bottom right, rgba($color-secondary-light, 0.85), rgba($color-secondary-dark, 0.85));
+            color: $color-white;
+        }
+        &--2{
+            background-image: linear-gradient(to bottom right, rgba($color-light-green, 0.85), rgba($color-dark-green, 0.85));
+            color: $color-white;
+        }
+        &--3{
+            background-image: linear-gradient(to bottom right, rgba($color-tertiary-light, 0.85), rgba($color-tertiary-dark, 0.85));
+            color: $color-white;
+        }
+    }
+    &__details{
+        padding: 1.5rem;
+        ul{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            color: $color-dark-grey;
+            li{
+                padding: 0.4rem;
+                font-size: $default-font-size;
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-light-grey-2;
+                }
+            }
+        }
+    }
+     //Styling back of cards
+     &__cta{
+        width: 90%;
+        @include align-center;
+     }
+    
+     &__price--only{
+        text-transform: uppercase;
+        
+    }
+    &__price--value{
+        font-size: 4rem;
+        font-weight: 200;
+    }
+}
