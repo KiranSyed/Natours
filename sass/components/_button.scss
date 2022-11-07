@@ -1,84 +1,89 @@
 .btn {
-    &:link, &:visited{
-        position: relative;
-        display: inline-block;
-        font-size: $default-font-size;
-        padding: .5rem 2rem;
-        border-radius: 100px;
-        text-transform: uppercase;
-      
-        text-decoration: none;
-       
-        transition-property: box-shadow 100ms;
+  &,
+  &:link,
+  &:visited {
+    position: relative;
+    display: inline-block;
+    font-size: $default-font-size;
+    padding: 0.5rem 2rem;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition-property: box-shadow 100ms;
+    border: none;
+    cursor: pointer;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $default-shadow;
+    &::after {
+      transform: scaleX(1.3) scaleY(1.6);
+      opacity: 0;
     }
-    &:hover{
-        transform: translateY(-3px);
-        box-shadow: $default-shadow;
-        &::after{
-            transform: scaleX(1.3) scaleY(1.6);
-            opacity: 0;
-        }
+  }
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: $small-shadow;
+  }
+  &::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    margin-top: 10%;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 500ms, opacity 500ms;
+  }
+  &--white {
+    background-color: $color-white;
+    color: $color-dark-grey;
+    &::after {
+      background-color: $color-white;
     }
-    &:active{
-        transform: translateY(-1px);
-        box-shadow: $small-shadow;
+  }
+  &--animated {
+    @include anim-slide(slide-bottom, y, 30rem, 0rem);
+    animation: slide-bottom 1s ease-out 1s;
+    animation-fill-mode: backwards;
+  }
+  &-text {
+    &:link,
+    &:visited {
+      font-size: $default-font-size;
+      text-decoration: none;
+      display: inline-block;
+      color: $color-primary;
+      border-bottom: 1px solid $color-primary;
+      padding: 3px;
     }
-    &::after{
-        content: "";
-        height: 100%;
-        width: 100%;
-        display: inline-block;
-        padding: .5rem 2rem;
-        border-radius: 100px;
-        text-transform: uppercase;
-        margin-top: 10%;
-        text-decoration: none;
-        padding: 0;
-        margin: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: transform 500ms, opacity 500ms;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: $default-shadow;
+      transition: transform 0.3s;
+      transform: translateY(-3px);
     }
-    &--white{
-        background-color: $color-white;
-        color: $color-dark-grey;
-        &::after{
-            background-color: $color-white;
-        }
+    &:active {
+      box-shadow: $small-shadow;
+      transform: translateY(-1px);
     }
-    &--animated{
-        @include anim-slide(slide-bottom, y, 30rem, 0rem);
-        animation: slide-bottom 1s ease-out 1s;
-        animation-fill-mode: backwards;
+  }
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    &::after {
+      background-color: $color-primary;
     }
-    &-text{
-        &:link, &:visited{
-            font-size: $default-font-size;
-            text-decoration: none;
-            display: inline-block;
-            color: $color-primary;
-            border-bottom: 1px solid $color-primary;
-            padding: 3px;
-        }
-        &:hover{
-            background-color: $color-primary;
-            color: $color-white;
-            box-shadow: $default-shadow;
-            transition: transform .3s;
-            transform: translateY(-3px);
-        }
-        &:active{
-            box-shadow: $small-shadow;
-            transform: translateY(-1px);
-        }
-    }
-    &--green{
-        background-color: $color-primary;
-        color: $color-white;
-        &::after{
-            background-color: $color-primary;
-        }
-    }
+  }
 }

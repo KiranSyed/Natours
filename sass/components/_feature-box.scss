@@ -1,7 +1,7 @@
 .feature-box {
   color: $color-dark-grey;
   background-color: rgba($color-white, 0.8);
-  border-radius: 3px;
+  border-radius: $round-corner;
   padding: 1rem;
   box-shadow: $default-shadow;
   transition: transform 0.3s;
