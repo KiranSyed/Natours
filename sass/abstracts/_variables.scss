@@ -20,17 +20,17 @@ $color-light-grey-3: rgb(192, 192, 192);
 
 //Grid
 $cell-color: none;
-$grid-width: 60rem;
-$row-height: 4rem;
-$cell-gap: 3rem;
-$row-gap: 4rem;
+$grid-width: 114rem;
+$cell-gap: 6rem;
+$row-gap-small: 6rem;
+$row-gap: 8rem;
 
 //Fonts
-$default-font-size: 1rem;
+$default-font-size: 1.6rem;
 
 //Shadows
 $default-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-$large-shadow: 0 2rem 4rem rgba($color-black, 0.3);
+$large-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
 $small-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
 //border radius
 $round-corner: 3px;

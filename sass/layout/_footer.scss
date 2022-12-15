@@ -1,17 +1,23 @@
 .footer {
   background-color: $color-dark-grey-3;
   color: $color-light-grey-1;
-  padding: 8rem 0rem 15rem;
-  font-size: 0.9rem;
-  // &__logo-box {
-  // }
+  padding: 10rem 0rem;
+  font-size: 1.4rem;
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
   &__logo {
-    width: 9rem;
+    width: 15rem;
+    height: auto;
   }
   &__navigation {
     border-top: $color-dark-grey-2 1px solid;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     display: inline-block;
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
   &__list {
     list-style: none;
@@ -19,7 +25,7 @@
   &__item {
     display: inline-block;
     &:not(:last-child) {
-      margin-right: 0.8rem;
+      margin-right: 1.5rem;
     }
   }
   &__link {
@@ -41,8 +47,13 @@
   }
   &__copyright {
     border-top: $color-dark-grey-2 1px solid;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     width: 90%;
     float: right;
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+      float: none;
+    }
   }
 }

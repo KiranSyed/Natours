@@ -1,36 +1,47 @@
-.row{
-    max-width: $grid-width;
-    margin: 0 auto;
-     @include clear-fix;
-    &:not(:last-child){
-        margin-bottom: $row-gap;   
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+  &:not(:last-child) {
+    margin-bottom: $row-gap;
+    @include respond(tab-port) {
+      margin-bottom: $row-gap-small;
     }
-    [class^="col-"]{
-        background-color: $cell-color;
-        float: left;
-        height: $row-height;
-        &:not(:last-child){
-            margin-right: $cell-gap;
-        }
+  }
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 3rem;
+  }
+  @include clear-fix;
+  [class^="col-"] {
+    background-color: $cell-color;
+    float: left;
+    &:not(:last-child) {
+      margin-right: $cell-gap;
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $row-gap-small;
+      }
     }
-    .col-1-of-2{
-        width: calc((100% - #{$cell-gap})/2);  
+    @include respond(tab-port) {
+      width: 100% !important;
     }
-    .col-1-of-3{
-        width: calc((100% - 2*(#{$cell-gap}))/3);    
-    }
-    .col-2-of-3{
-        width: calc(((100% - 2*(#{$cell-gap}))/3)*2 + #{$cell-gap}); 
-    }
-    .col-1-of-4{
-        width: calc((100% - 3*(#{$cell-gap}))/4);
-      
-    }
-    .col-2-of-4{
-        width: calc(((100% - 3*(#{$cell-gap}))/4)*2 + #{$cell-gap}); 
-    }
-    .col-3-of-4{
-        width: calc(((100% - 3*(#{$cell-gap}))/4)*3 + 2*(#{$cell-gap})); 
-    }
-   
+  }
+  .col-1-of-2 {
+    width: calc((100% - #{$cell-gap}) / 2);
+  }
+  .col-1-of-3 {
+    width: calc((100% - 2 * (#{$cell-gap})) / 3);
+  }
+  .col-2-of-3 {
+    width: calc(((100% - 2 * (#{$cell-gap})) / 3) * 2 + #{$cell-gap});
+  }
+  .col-1-of-4 {
+    width: calc((100% - 3 * (#{$cell-gap})) / 4);
+  }
+  .col-2-of-4 {
+    width: calc(((100% - 3 * (#{$cell-gap})) / 4) * 2 + #{$cell-gap});
+  }
+  .col-3-of-4 {
+    width: calc(((100% - 3 * (#{$cell-gap})) / 4) * 3 + 2 * (#{$cell-gap}));
+  }
 }
