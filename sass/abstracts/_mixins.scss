@@ -22,13 +22,17 @@
   background-position: top;
 }
 @mixin gradient-text {
-  background-image: linear-gradient(
-    to right,
-    $color-light-green,
-    $color-dark-green
-  );
-  background-clip: text;
-  color: transparent;
+  color: $color-dark-green;
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    background-image: linear-gradient(
+      to right,
+      $color-light-green,
+      $color-dark-green
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 //Media query manager
 /*
